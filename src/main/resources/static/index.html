@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Logger configurator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script defer src="js/pageBuilder.js" charset="UTF-8"></script>
+    <script defer src="js/search.js" charset="UTF-8"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="tab">
+    <button class="tablinks" onclick="openTab('gate')">Gate</button>
+    <button class="tablinks" onclick="openTab('hamster')">Hamster</button>
+</div>
+
+<button id="button-update">UPDATE LOGGERS LIST</button>
+
+<input type="text" id="search_name" onkeyup='searchTableName()' placeholder="Type to search logger name">
+<input type="text" id="search_level" onkeyup='searchTableLevel()' placeholder="Type to search logger level">
+
+
+<div class="rTable" id="loggers_table">
+    <div class="table-header">
+        <div class="rTableRow">
+            <div class="rTableHead logger"><strong>LOGGER</strong></div>
+            <div class="rTableHead level"><strong>configuredLevel</strong></div>
+            <div class="rTableHead"><strong>effectiveLevel</strong></div>
+        </div>
+    </div>
+    <div class="table-content" id="gate-table-content">
+    </div>
+    <div class="table-content" id="hamster-table-content">
+    </div>
+</div>
+
+</body>
+</html>
