@@ -14,22 +14,20 @@ function updateTable(app) {
 }
 
 function changeLogLevel(selectObject) {
-    // console.log(value);
     let value = selectObject.value;
     let parent = selectObject.parentNode.parentNode;
     let logger = parent.firstChild.textContent;
 
-    // console.log(value);
 
-    var req = new XMLHttpRequest();
+    let req = new XMLHttpRequest();
 
-    var body = JSON.stringify({
+    let body = JSON.stringify({
         "loggerName": logger,
         "configuredLevel": value,
-        "app": "hamster"
+        "app": app
     });
 
-    req.open("POST", '/ws/changeLogger/hamster', true);
+    req.open("POST", '/ws/changeLogger/' + app, true);
     req.setRequestHeader('Content-Type', 'application/json');
 
     req.send(body);
